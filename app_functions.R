@@ -1,4 +1,4 @@
-# Define the "Virtual Gene"-function (See code for functions above)
+# Generates a random DNA sequence of specified length and base probabilities
 gene_dna <- function(length, base_probs = c(0.25, 0.25, 0.25, 0.25)){
   if( length %% 3 != 0 ){
     stop("The argument to the parameter 'l' has to be divisible by 3")
@@ -17,7 +17,7 @@ gene_dna <- function(length, base_probs = c(0.25, 0.25, 0.25, 0.25)){
   return(dna_string)
 }
 
-# Virtual RNA polymerase
+# Transcribes DNA to RNA by replacing "T" with "U"
 transcribe_dna <- function(dna){
   rna <- gsub(
     pattern = "T",
@@ -26,7 +26,7 @@ transcribe_dna <- function(dna){
   return(rna)
 }
 
-# Virtual Ribosome
+# Translates RNA sequence to protein sequence using codon table
 translate_rna <- function(rna){
   if( is.null(rna) || rna == "" ){ return("") }
   l <- nchar(x = rna)
@@ -76,7 +76,7 @@ base_freqs <- function(dna){
   return( as.data.frame.table(base_counts) )
 }
 
-#Make an aa frequency plot
+# Creates a bar plot of amino acid counts in a protein sequence
 aa_count <- function(seq){
   unique_aa <- seq |>
     stringr::str_split(pattern = stringr::boundary("character"), simplify = TRUE) |>
