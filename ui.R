@@ -52,11 +52,25 @@ ui <- page_fluid(
   layout_columns(
     col_widths = 12,
     card(
-      card_header("Virtual central dogma"),
+      card_header("Virtual Central Dogma"),
       mainPanel(
-        verbatimTextOutput(outputId = "dna"),
-        verbatimTextOutput(outputId = "rna"),
-        verbatimTextOutput(outputId = "protein")
+        # DNA Output
+        tags$div(
+          tags$h4("DNA"),
+          verbatimTextOutput(outputId = "dna")
+        ),
+        
+        # RNA Output
+        tags$div(
+          tags$h4("RNA"),
+          verbatimTextOutput(outputId = "rna")
+        ),
+        
+        # Protein Output
+        tags$div(
+          tags$h4("Protein"),
+          verbatimTextOutput(outputId = "protein")
+        )
       )
     ))
 )
