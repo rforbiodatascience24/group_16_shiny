@@ -6,28 +6,28 @@ server <- function(input, output) {
   })
   
   rna_sequence <- reactive({
-    transcribe_dna(dna_sequence)
+    transcribe_dna(dna_sequence())
   })
   
   prot_sequence <- reactive({
-    translate_rna(rna_sequence)
+    translate_rna(rna_sequence())
   })
   
   plot_aa_freq <- reactive({
-    aa_count(prot_sequence)
+    aa_count(prot_sequence())
   })
   
   
   output$dna <- renderText({
-    dna_sequence
+    dna_sequence()
     })
   
   output$rna <- renderText({
-    rna_sequence
+    rna_sequence()
   })
   
   output$protein <- renderText({
-    prot_sequence
+    prot_sequence()
   })
   
   #output$aaPlot <- renderPlot({

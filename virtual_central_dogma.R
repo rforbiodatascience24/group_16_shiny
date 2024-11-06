@@ -1,8 +1,8 @@
 # Load needed libraries
 library("shiny")
 library("bslib")
-library("ggplot2")
-library("stringr")
+#library("ggplot2")
+#library("stringr")
 
 
 # Load needed functions
