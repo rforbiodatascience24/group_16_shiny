@@ -1,3 +1,5 @@
+
+library("bslib")
 # Define the User Interface (Frontend)
 ui <- page_fluid(
   # App title section
